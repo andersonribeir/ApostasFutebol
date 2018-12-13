@@ -1,0 +1,48 @@
+<?php
+session_start();
+
+
+if (!isset($_SESSION['UsuarioID'])) {
+  header("Location: index.php");
+}
+
+$login = $_SESSION['UsuarioID'];
+$qtdtimes = $_SESSION['totaltimes'];
+$rodada = $_SESSION['rodadaatual'];
+
+// Tenta se conectar ao servidor MySQL
+ $conexao = mysqli_connect('127.0.0.1', 'root', '', 'pwebfinal') or trigger_error(mysql_error());
+ 
+
+
+ $i = 1;
+ while ($i <= $qtdtimes) {
+   
+   $timerec = mysqli_real_escape_string($conexao, $_POST[$i]);
+   echo $timerec;
+
+    $sql = "SELECT idtime FROM timescad WHERE nometime = '{$timerec}'";
+    $query = mysqli_query($conexao,$sql);
+    $linha = mysqli_num_rows($query);
+      // Salva os dados encontrados na variável $resultado
+    $resultado = mysqli_fetch_assoc($query);
+    $time = $resultado['idtime'];
+
+
+    
+  $aposta = "INSERT INTO aposta(idaposta,usuario_loginuser,rodada_idrodada,colocacaotime_idcolocacaotime,times_idtime) VALUES (NULL,'$login','$rodada','$i','$time')";
+  $query2 = mysqli_query($conexao,$aposta);
+
+   $i++;
+ 
+ echo $rodada;
+
+ }
+
+ 
+
+  header('location: index4.php')
+
+  
+  
+?>

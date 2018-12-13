@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Cadastro</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="css/global.css" type="text/css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<div class="container-fluid bg">
+	<a class="btv btn-success" href="index.php" >Voltar</a>		
+		
+	<div class="row">
+		<div class="col-md-4 col-sm-4 col-xs-12"></div>
+		<div class="col-md-4 col-sm-4 col-xs-12">
+			<!--inicio-->
+				<form class="form-conatiner2" method="POST" action="cadastrar.php">
+					<center><h2>Cadastro</h2></center>
+
+ <div class="form-group">  	
+    <label for="usercad">Nickname</label>
+    <input type="nickname" class="form-control" name="usercad" placeholder="Nickname" required>
+    
+  </div>
+  <div class="form-group">  	
+    <label for="nome">Nome</label>
+    <input type="name" class="form-control" name="nome" name="nome" placeholder="Nome" required>
+    
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+  </div>
+  <div class="form-group">
+    <label for="senhacad">Senha</label>
+    <input type="password" class="form-control" id="senhacad" name="senhacad" placeholder="Senha" required>
+  </div>
+  <div class="form-group">
+    <label for=senhacad2>Repita sua senha</label>
+    <input type="password" class="form-control" id="senhacad2" name="senhacad2" placeholder="Repita a senha" required>
+  </div>
+  
+  
+  <button type="submit" class="btncad btn-success btn-block">Cadastrar</button><br>
+ 
+</form>
+
+			<!--fim-->
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-12"></div>
+	</div>
+</div>
+
+
+</body>
+</html>
